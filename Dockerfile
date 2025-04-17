@@ -45,6 +45,4 @@ RUN git config --global --add safe.directory /var/www
 
 WORKDIR /var/www
 
-EXPOSE 9000
-
 COPY --chown=app:app . /var/www

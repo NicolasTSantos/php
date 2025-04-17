@@ -9,10 +9,6 @@ use Utils\Config;
 class Database {
     private static ?PDO $db = null;
 
-    function __construct() {
-        
-    }
-
     public static function connectDb(): PDO {
         if (self::$db === null) {
             try {

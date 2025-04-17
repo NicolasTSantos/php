@@ -12,26 +12,26 @@ services:
     env_file:
       - .env
     restart: always
-    networks: 
+    networks:
       - php-network
-  
+
   nginx:
     image: nginx:alpine
     container_name: nginx
     restart: unless-stopped
     env_file:
       - .env
-    ports: 
+    ports:
       - 8080:80
     volumes:
       - ./:/var/www
       - ./.docker/nginx/logs:/var/log/nginx
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-    networks: 
+    networks:
         - php-network
     links:
         - php
 
-networks: 
+networks:
   php-network:
     driver: bridge
